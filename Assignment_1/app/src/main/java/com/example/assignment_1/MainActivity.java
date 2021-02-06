@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -16,12 +17,21 @@ public class MainActivity extends AppCompatActivity {
 
     ListView experimentListView;
     ArrayAdapter<String> experimentAdapter;
-    ArrayList<Experiment> experimentDataList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null){
+            String experimentName = extras.getString("name");
+            String experimentDate = extras.getString("date");
+            String experimentDescription = extras.getString("description");
+            Experiment experiment = new Experiment(experimentName, experimentDate, experimentDescription);
+            ArrayList<Experiment> current = AssignmentApplication.getExperiments();
+            current.add(experiment);
+        }
 
     }
 
@@ -29,4 +39,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddProductActivity.class);
         startActivity(intent);
     }
+
+
 }
