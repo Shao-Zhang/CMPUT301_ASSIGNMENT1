@@ -3,18 +3,11 @@ package com.example.assignment_1;
 public class Experiment {
     private String name;
     private String date;
-    private String Rate;
+    private String description;
 
-    public Experiment(String name, String date) {
+    public Experiment(String name, String date, String description) {
         this.name = name;
         this.date = date;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setRate(String rate) {
-        Rate = rate;
+        this.description = description;
     }
 }
