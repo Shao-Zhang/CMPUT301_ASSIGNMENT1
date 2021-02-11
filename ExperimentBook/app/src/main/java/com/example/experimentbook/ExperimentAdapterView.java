@@ -13,14 +13,11 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 public class ExperimentAdapterView extends ArrayAdapter<Experiment> {
-
-    private ArrayList<Experiment> experiments;
     private Context context;
 
     public ExperimentAdapterView(@NonNull Context context, @NonNull ArrayList<Experiment> experiments) {
         super(context, 0, experiments);
         this.context = context;
-        this.experiments = experiments;
 
     }
 

@@ -45,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
         experimentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // open up new activity and pass in the position clicked so we know which experiment it is.
+                Intent addItemView = new Intent(MainActivity.this, ExperimentView.class);
+                addItemView.putExtra("itemNum", position);
+                startActivity(addItemView);
             }
         });
     }

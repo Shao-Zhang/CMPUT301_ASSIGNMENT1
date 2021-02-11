@@ -33,6 +33,33 @@
         android:gravity="center_horizontal"
         android:hint="Fail/false: "/>
 
+    <TextView
+        android:id="@+id/totalTrialView"
+        android:layout_width="205dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/experimentViewSuccess"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:hint="Total Trial Count:"/>
+
+    <TextView
+        android:id="@+id/successRateView"
+        android:layout_width="205dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/totalTrialView"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:hint="Success Rate:"/>
+
+    <TextView
+        android:id="@+id/descriptionView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/experimentViewSuccess"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="100dp" />
+
     <Button
         android:id="@+id/experimentSuccessButton"
         android:layout_width="wrap_content"
@@ -46,7 +73,7 @@
         android:id="@+id/experimentFailButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Success/True"
+        android:text="Fail/false"
         android:layout_below="@+id/experimentViewSuccess"
         android:layout_marginLeft="230dp"
         android:layout_marginTop="400dp"/>

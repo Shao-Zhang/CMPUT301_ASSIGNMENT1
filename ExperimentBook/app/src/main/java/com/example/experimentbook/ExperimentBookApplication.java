@@ -14,4 +14,12 @@ public class ExperimentBookApplication extends Application {
         return experiments;
 
     }
+
+    public static Experiment getExperimentIndex(int position){
+        if (experiments == null) {
+            return null;
+        } else {
+            return experiments.get(position);
+        }
+    }
 }

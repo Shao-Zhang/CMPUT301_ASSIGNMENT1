@@ -4,6 +4,7 @@ public class Experiment {
     private String name;
     private String date;
     private String description;
+    private Trials trial = new Trials();
 
     public Experiment(String name, String date, String description) {
         this.name = name;
@@ -15,24 +16,42 @@ public class Experiment {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getDate() {
         return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public int getSuccessCount(){
+        return trial.getSuccessNum();
     }
+
+    public int getFailCount() {
+        return trial.getFailNum();
+    }
+
+    public int getTotalCount() {
+        return trial.getNumOfTrials();
+    }
+
+    public int getSuccessRate() {
+        return trial.getSuccessRate();
+    }
+
+    public void addSuccessCount() {
+        trial.addSuccessNum();
+    }
+
+    public void addFailCount() {
+        trial.addFailNum();
+    }
+
+    public void addTrialCount() {
+        trial.addTrialNum();
+    }
+
+
 }
 
