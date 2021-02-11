@@ -28,6 +28,8 @@ public class AddExperimentActivity extends AppCompatActivity {
                 String fullName = name.getText().toString();
                 String fullDate = date.getText().toString();
                 String fullDescription = description.getText().toString();
+
+                // https://stackoverflow.com/questions/2091465/how-do-i-pass-data-between-activities-in-android-application
                 Intent returnToMain = new Intent(AddExperimentActivity.this, MainActivity.class);
                 returnToMain.putExtra("name", fullName);
                 returnToMain.putExtra("date", fullDate);

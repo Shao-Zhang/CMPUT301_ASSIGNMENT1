@@ -50,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(addItemView);
             }
         });
+
+        experimentListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Experiment toRemove = adapterView.getItem(position);
+                adapterView.remove(toRemove);
+                adapterView.notifyDataSetChanged();
+                return false;
+            }
+        });
     }
 
     public void addButtonClicked(View view){

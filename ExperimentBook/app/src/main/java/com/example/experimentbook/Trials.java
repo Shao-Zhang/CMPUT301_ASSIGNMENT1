@@ -4,13 +4,13 @@ public class Trials {
     private int successNum;
     private int failNum;
     private int numOfTrials;
-    private int successRate;
+    private float successRate;
 
     public Trials() {
         successNum = 0;
         failNum = 0;
         numOfTrials = 0;
-        successRate = setSuccessRate(successNum, numOfTrials);
+        successRate = getSuccessRate(numOfTrials, successNum);
     }
 
     public int getSuccessNum() {
@@ -25,27 +25,27 @@ public class Trials {
         return numOfTrials;
     }
 
-    public int getSuccessRate() {
+    public float getSuccessRate(int numOfTrials, int successNum) {
+        if (numOfTrials == 0){
+            successRate = 0;
+        } else {
+            successRate = ((float) successNum/numOfTrials) * 100;
+
+        }
         return successRate;
     }
 
     public void addSuccessNum() {
         successNum = successNum + 1;
+
     }
 
     public void addFailNum() {
         failNum = failNum + 1;
+        
     }
 
     public void addTrialNum() {
         numOfTrials = numOfTrials + 1;
-    }
-
-    private int setSuccessRate(int successNum, int numOfTrials) {
-        if (numOfTrials == 0){
-            return 0;
-        } else {
-            return successNum / numOfTrials;
-        }
     }
 }

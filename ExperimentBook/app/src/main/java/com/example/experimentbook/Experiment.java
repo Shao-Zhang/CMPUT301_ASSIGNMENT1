@@ -36,8 +36,8 @@ public class Experiment {
         return trial.getNumOfTrials();
     }
 
-    public int getSuccessRate() {
-        return trial.getSuccessRate();
+    public float getSuccessRate() {
+        return trial.getSuccessRate(trial.getNumOfTrials(), trial.getSuccessNum());
     }
 
     public void addSuccessCount() {

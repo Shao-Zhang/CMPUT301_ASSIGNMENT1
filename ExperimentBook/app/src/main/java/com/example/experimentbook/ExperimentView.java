@@ -1,6 +1,7 @@
 package com.example.experimentbook;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -20,25 +21,7 @@ public class ExperimentView extends AppCompatActivity {
         int experimentIndex = getIntent().getIntExtra("itemNum", 0);
         experiment = ExperimentBookApplication.getExperimentIndex(experimentIndex);
 
-        TextView nameView = findViewById(R.id.experimentViewName);
-        TextView successView = findViewById(R.id.experimentViewSuccess);
-        TextView failView = findViewById(R.id.experimentViewFail);
-        TextView descriptionView = findViewById(R.id.descriptionView);
-        TextView successRateView = findViewById(R.id.successRateView);
-        TextView totalTrialView = findViewById(R.id.totalTrialView);
-
-        String success = "Success/True: " + experiment.getSuccessCount();
-        String fail = "Fail/False: " + experiment.getFailCount();
-        String rate = "Success Rate: " + experiment.getSuccessRate();
-        String totalTrial = "Total Rates: " + experiment.getTotalCount();
-        String description = "DESCRIPTION: " + experiment.getDescription();
-
-        nameView.setText(experiment.getName());
-        successView.setText(success);
-        failView.setText(fail);
-        descriptionView.setText(description);
-        successRateView.setText(rate);
-        totalTrialView.setText(totalTrial);
+        setView(experiment);
 
         Button successButton = findViewById(R.id.experimentSuccessButton);
         Button failButton = findViewById(R.id.experimentFailButton);
@@ -48,10 +31,6 @@ public class ExperimentView extends AppCompatActivity {
             public void onClick(View v) {
                 experiment.addSuccessCount();
                 experiment.addTrialCount();
-                nameView.setText(experiment.getName());
-                successView.setText(success);
-                successRateView.setText(rate);
-                totalTrialView.setText(totalTrial);
                 finish();
                 overridePendingTransition( 0, 0);
                 startActivity(getIntent());
@@ -64,10 +43,7 @@ public class ExperimentView extends AppCompatActivity {
             public void onClick(View v) {
                 experiment.addFailCount();
                 experiment.addTrialCount();
-                nameView.setText(experiment.getName());
-                failView.setText(fail);
-                successRateView.setText(rate);
-                totalTrialView.setText(totalTrial);
+                // https://stackoverflow.com/questions/17488766/refresh-activity-without-re-opening-it
                 finish();
                 overridePendingTransition( 0, 0);
                 startActivity(getIntent());
@@ -76,5 +52,27 @@ public class ExperimentView extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setView( Experiment experiment){
+        TextView nameView = findViewById(R.id.experimentViewName);
+        TextView successView = findViewById(R.id.experimentViewSuccess);
+        TextView failView = findViewById(R.id.experimentViewFail);
+        TextView descriptionView = findViewById(R.id.descriptionView);
+        TextView successRateView = findViewById(R.id.successRateView);
+        TextView totalTrialView = findViewById(R.id.totalTrialView);
+
+        String success = "Success/True: " + experiment.getSuccessCount();
+        String fail = "Fail/False: " + experiment.getFailCount();
+        String rate = "Success Rate: " + experiment.getSuccessRate() + "%";
+        String totalTrial = "Total Trials: " + experiment.getTotalCount();
+        String description = "DESCRIPTION: " + experiment.getDescription();
+
+        nameView.setText(experiment.getName());
+        successView.setText(success);
+        failView.setText(fail);
+        descriptionView.setText(description);
+        successRateView.setText(rate);
+        totalTrialView.setText(totalTrial);
     }
 }
