@@ -4,6 +4,9 @@ import android.app.Application;
 
 import java.util.ArrayList;
 
+// Reference from Cristian https://stackoverflow.com/users/244296/cristian
+// From Stackoverflow
+// https://stackoverflow.com/posts/4878259/revisions
 public class ExperimentBookApplication extends Application {
     transient private static ArrayList<Experiment> experiments;
 
@@ -21,5 +24,9 @@ public class ExperimentBookApplication extends Application {
         } else {
             return experiments.get(position);
         }
+    }
+
+    public static void removeExperiment(int position){
+        experiments.remove(position);
     }
 }

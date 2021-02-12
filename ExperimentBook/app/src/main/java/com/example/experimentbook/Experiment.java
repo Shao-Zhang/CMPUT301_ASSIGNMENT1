@@ -24,6 +24,18 @@ public class Experiment {
         return description;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public int getSuccessCount(){
         return trial.getSuccessNum();
     }

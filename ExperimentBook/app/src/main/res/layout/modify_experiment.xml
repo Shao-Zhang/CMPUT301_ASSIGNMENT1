@@ -6,48 +6,50 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/experimentName"
+        android:id="@+id/modifyName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:hint="Experiment Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/experimentDate"
+        android:id="@+id/modifyDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Date (YYYY/MM/DD)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/experimentName" />
+        app:layout_constraintTop_toBottomOf="@+id/modifyName" />
 
     <EditText
-        android:id="@+id/experimentDescription"
+        android:id="@+id/modifyDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="Description"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/experimentDate" />
+        app:layout_constraintTop_toBottomOf="@+id/modifyDate" />
 
     <Button
-        android:id="@+id/addFinalButton"
+        android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="addItemButtonPress"
-        android:text="Add"
+        android:text="Save Changes"
+        app:layout_constraintBottom_toTopOf="@+id/deleteButton" />
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DELETE"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

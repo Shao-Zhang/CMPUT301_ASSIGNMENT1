@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -21,12 +23,14 @@ public class ExperimentAdapterView extends ArrayAdapter<Experiment> {
 
     }
 
+    // Reference from @301TA
+    // Lab03
+    // https://eclass.srv.ualberta.ca/pluginfile.php/6713985/mod_resource/content/1/Lab%203%20instructions%20-%20CustomList.pdf
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         View view = convertView;
-        // get experiment info
         String name = getItem(position).getName();
         String date = getItem(position).getDate();
         String description = getItem(position).getDescription();

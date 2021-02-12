@@ -31,6 +31,9 @@ public class ExperimentView extends AppCompatActivity {
             public void onClick(View v) {
                 experiment.addSuccessCount();
                 experiment.addTrialCount();
+                // Taken from Stephane Mathis https://stackoverflow.com/users/1318795/stephane-mathis
+                // From Stackoverflow
+                // https://stackoverflow.com/a/17488862
                 finish();
                 overridePendingTransition( 0, 0);
                 startActivity(getIntent());
@@ -43,7 +46,9 @@ public class ExperimentView extends AppCompatActivity {
             public void onClick(View v) {
                 experiment.addFailCount();
                 experiment.addTrialCount();
-                // https://stackoverflow.com/questions/17488766/refresh-activity-without-re-opening-it
+                // Taken from Stephane Mathis https://stackoverflow.com/users/1318795/stephane-mathis
+                // From Stackoverflow
+                // https://stackoverflow.com/a/17488862
                 finish();
                 overridePendingTransition( 0, 0);
                 startActivity(getIntent());

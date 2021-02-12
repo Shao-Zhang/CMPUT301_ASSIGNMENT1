@@ -22,6 +22,9 @@
         <activity android:name=".ExperimentView"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".ModifyExperiment"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>
